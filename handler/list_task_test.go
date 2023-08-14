@@ -62,7 +62,7 @@ func TestListTask(t *testing.T) {
 				return nil, errors.New("error from mock")
 			}
 			sut := ListTask{Service: moq}
-			sut.ServerHTTP(w, r)
+			sut.ServeHTTP(w, r)
 
 			resp := w.Result()
 			testutil.AssertResponse(t,
